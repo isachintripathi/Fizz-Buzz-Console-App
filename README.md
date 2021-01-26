@@ -11,6 +11,7 @@ C:\Desktop\LG> dotnet new console
 this will create a console app. Now add all classes, Interface, Model and Main Method and hit next commands.
 
 C:\Desktop\LG> dotnet build
+
 C:\Desktop\LG> dotnet run
 
 Best Practices Added :
