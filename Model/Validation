@@ -1,0 +1,41 @@
+using System;
+using LinkGroup.InputValidationInterface;
+
+namespace LinkGroup.InputValidation
+{
+    public class Validation : IValidation
+    {
+
+        public readonly IValidation _validateInput;
+
+        public Validation() { }
+
+        #region Validation Logic
+        /// <summary>
+        /// This Method will validate the Input. 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string validateInput(string input)
+        {
+            try
+            {
+                if (input != null && input.TrimEnd() == "")
+                {
+                    throw new Exception("Input is empty. Please enter some Input.");
+                }
+                else if (Convert.ToInt32(input) <= 0)
+                {
+                    throw new Exception("Input is less than or equal to zero. Please write Valid Input.");
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Validation Failed.");
+                throw;
+            }
+            return input;
+        }
+        #endregion
+    }
+}
